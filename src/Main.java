@@ -1,5 +1,5 @@
 /*
- 
+ * Programming beroepsproduct: Kassa
  */
 
 /**
