@@ -44,9 +44,19 @@ public class KassaForm extends javax.swing.JFrame {
 
         jButton1.setText("Koffie");
         jButton1.setPreferredSize(new java.awt.Dimension(91, 25));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Water");
         jButton2.setPreferredSize(new java.awt.Dimension(91, 25));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jCheckBox1.setText("10% Korting");
 
@@ -68,8 +78,18 @@ public class KassaForm extends javax.swing.JFrame {
 
         jButton5.setText("Wijn Wit");
         jButton5.setPreferredSize(new java.awt.Dimension(91, 25));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setText("Wijn Rood");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setText("+");
 
@@ -79,12 +99,6 @@ public class KassaForm extends javax.swing.JFrame {
 
         jButton10.setText("Afrekenen");
         jButton10.setPreferredSize(new java.awt.Dimension(65, 25));
-
-        jTextField2.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                jTextField2PropertyChange(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -156,19 +170,19 @@ public class KassaForm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    String[] producten = {"Bier","Speciaal Bier","Koffie", "Water", "Wijn Wit", "Wijn Rood"};
-    double[] prijsLijst = {2.50, 3.40, 2.20, 1.40, 4.40, 4.40};
+    String[] producten = {"Bier", "Speciaal Bier", "Koffie", "Water", "Wijn Wit", "Wijn Rood"};
+    double[] prijsLijst = {2.50, 3.50, 2.0, 1.50, 4.50, 4.50};
     double voorlopigBedrag = 0;
-    
-    
-    
+
+
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         String productNaam = producten[0];
         double productPrijs = prijsLijst[0];
         String productText = Double.toString(productPrijs);
-        jTextField1.setText(jTextField1.getText() + productText);
+        //jTextField1.setText(jTextField1.getText() + productText +"\n");
         voorlopigBedrag += productPrijs;
+        jTextField2.setText("€ " + voorlopigBedrag);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -176,16 +190,46 @@ public class KassaForm extends javax.swing.JFrame {
         String productNaam = producten[1];
         double productPrijs = prijsLijst[1];
         String productText = Double.toString(productPrijs);
-        jTextField1.setText(jTextField1.getText() + productText);
         voorlopigBedrag += productPrijs;
+        jTextField2.setText("€ " + voorlopigBedrag);
     }//GEN-LAST:event_jButton4ActionPerformed
-    String voorlopigBedragText = Double.toString(voorlopigBedrag);
-    private void jTextField2PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jTextField2PropertyChange
+   
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-     
-    }//GEN-LAST:event_jTextField2PropertyChange
-    
-    
+        String productNaam = producten[2];
+        double productPrijs = prijsLijst[2];
+        String productText = Double.toString(productPrijs);
+        voorlopigBedrag += productPrijs;
+        jTextField2.setText("€ " + voorlopigBedrag);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        String productNaam = producten[3];
+        double productPrijs = prijsLijst[3];
+        String productText = Double.toString(productPrijs);
+        voorlopigBedrag += productPrijs;
+        jTextField2.setText("€ " + voorlopigBedrag);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        String productNaam = producten[4];
+        double productPrijs = prijsLijst[4];
+        String productText = Double.toString(productPrijs);
+        voorlopigBedrag += productPrijs;
+        jTextField2.setText("€ " + voorlopigBedrag);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        String productNaam = producten[5];
+        double productPrijs = prijsLijst[5];
+        String productText = Double.toString(productPrijs);
+        voorlopigBedrag += productPrijs;
+        jTextField2.setText("€ " + voorlopigBedrag);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -220,7 +264,7 @@ public class KassaForm extends javax.swing.JFrame {
             }
         });
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
