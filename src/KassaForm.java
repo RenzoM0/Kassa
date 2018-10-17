@@ -1,9 +1,11 @@
+
+import java.util.Arrays;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author lilre
@@ -37,8 +39,10 @@ public class KassaForm extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,6 +63,11 @@ public class KassaForm extends javax.swing.JFrame {
         });
 
         jCheckBox1.setText("10% Korting");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(192, 227, 141));
         jButton3.setText("Bier");
@@ -96,52 +105,74 @@ public class KassaForm extends javax.swing.JFrame {
         jButton8.setText("-");
 
         jButton9.setText("Reset");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         jButton10.setText("Afrekenen");
         jButton10.setPreferredSize(new java.awt.Dimension(65, 25));
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+
+        jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jList1.setToolTipText("");
+        jScrollPane1.setViewportView(jList1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(29, 29, 29)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(88, 88, 88)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE))
+                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(54, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
@@ -162,9 +193,9 @@ public class KassaForm extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
-                            .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(57, Short.MAX_VALUE))
         );
 
@@ -173,62 +204,152 @@ public class KassaForm extends javax.swing.JFrame {
     String[] producten = {"Bier", "Speciaal Bier", "Koffie", "Water", "Wijn Wit", "Wijn Rood"};
     double[] prijsLijst = {2.50, 3.50, 2.0, 1.50, 4.50, 4.50};
     double voorlopigBedrag = 0;
+    boolean korting = false;
+    int[] aantal = {0, 0, 0, 0, 0, 0};
+    String[][] productNaam = {{"","",""}, {"", "",""}, {"","",""}, {"","",""}, {"", "",""}, {"","",""}};
 
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        String productNaam = producten[0];
+        // BUTTON BIER
+        productNaam[0][1] = producten[0];
         double productPrijs = prijsLijst[0];
         String productText = Double.toString(productPrijs);
-        //jTextField1.setText(jTextField1.getText() + productText +"\n");
+        productNaam[0][2] = productText;
+        aantal[0] += 1;
+        String aantalText = Integer.toString(aantal[0]);
+        productNaam[0][0] = aantalText;
+
         voorlopigBedrag += productPrijs;
         jTextField2.setText("€ " + voorlopigBedrag);
+        /*
+        productNaam[0][0] = "";
+        productNaam[0][1] = "";
+        productNaam[0][2] = "";
+        productNaam[1][0] = "";
+        productNaam[1][1] = "";
+        productNaam[1][2] = "";
+        productNaam[2][0] = "";
+        productNaam[2][1] = "";
+        productNaam[2][2] = "";
+        productNaam[3][0] = "";
+        productNaam[3][1] = "";
+        productNaam[3][2] = "";
+        productNaam[4][0] = "";
+        productNaam[4][1] = "";
+        productNaam[4][2] = "";
+        productNaam[5][0] = "";
+        productNaam[5][1] = "";
+        productNaam[5][2] = "";
+        */
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-        String productNaam = producten[1];
+        // BUTTON SPECIAAL BIER
+        productNaam[1][1] = producten[1];
         double productPrijs = prijsLijst[1];
         String productText = Double.toString(productPrijs);
+        productNaam[1][2] = productText;
+        aantal[1] += 1;
+        String aantalText = Integer.toString(aantal[1]);
+        productNaam[1][0] = aantalText;
         voorlopigBedrag += productPrijs;
         jTextField2.setText("€ " + voorlopigBedrag);
     }//GEN-LAST:event_jButton4ActionPerformed
-   
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        String productNaam = producten[2];
+        // BUTTON KOFFIE
+        productNaam[2][1] = producten[2];
         double productPrijs = prijsLijst[2];
         String productText = Double.toString(productPrijs);
+        productNaam[2][2] = productText;
+        aantal[2] += 1;
+        String aantalText = Integer.toString(aantal[2]);
+        productNaam[2][0] = aantalText;
         voorlopigBedrag += productPrijs;
         jTextField2.setText("€ " + voorlopigBedrag);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        String productNaam = producten[3];
+        // BUTTON WATER
+        productNaam[3][1] = producten[3];
         double productPrijs = prijsLijst[3];
         String productText = Double.toString(productPrijs);
+        productNaam[3][2] = productText;
+        aantal[3] += 1;
+        String aantalText = Integer.toString(aantal[3]);
+        productNaam[3][0] = aantalText;
         voorlopigBedrag += productPrijs;
         jTextField2.setText("€ " + voorlopigBedrag);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-        String productNaam = producten[4];
+        // BUTTON WITTE WIJN
+        productNaam[4][1] = producten[4];
         double productPrijs = prijsLijst[4];
         String productText = Double.toString(productPrijs);
+        aantal[4] += 1;
+        String aantalText = Integer.toString(aantal[4]);
+        productNaam[4][0] = aantalText;
+        productNaam[4][2] = productText;
         voorlopigBedrag += productPrijs;
         jTextField2.setText("€ " + voorlopigBedrag);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-        String productNaam = producten[5];
+        // BUTTON RODE WIJN
+        productNaam[5][1] = producten[5];
         double productPrijs = prijsLijst[5];
         String productText = Double.toString(productPrijs);
+        aantal[5] += 1;
+        String aantalText = Integer.toString(aantal[5]);
+        productNaam[5][0] = aantalText;
+        productNaam[5][2] = productText;
         voorlopigBedrag += productPrijs;
         jTextField2.setText("€ " + voorlopigBedrag);
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // BUTTON RESET
+        voorlopigBedrag = 0;
+        jTextField2.setText("€ " + voorlopigBedrag);
+        productNaam[0][0] = "";
+        productNaam[0][1] = "";
+        productNaam[0][2] = "";
+        productNaam[1][0] = "";
+        productNaam[1][1] = "";
+        productNaam[1][2] = "";
+        productNaam[2][0] = "";
+        productNaam[2][1] = "";
+        productNaam[2][2] = "";
+        productNaam[3][0] = "";
+        productNaam[3][1] = "";
+        productNaam[3][2] = "";
+        productNaam[4][0] = "";
+        productNaam[4][1] = "";
+        productNaam[4][2] = "";
+        productNaam[5][0] = "";
+        productNaam[5][1] = "";
+        productNaam[5][2] = "";
+        jLabel1.setText(Arrays.deepToString(productNaam));
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        // TODO add your handling code here:
+        if (!korting) {
+            voorlopigBedrag *= 1.10;
+            jTextField2.setText("€ " + voorlopigBedrag);
+            korting = true;
+        } else {
+            voorlopigBedrag = voorlopigBedrag / 110 * 100;
+            jTextField2.setText("€ " + voorlopigBedrag);
+            korting = false;
+        }
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        jLabel1.setText(Arrays.deepToString(productNaam));
+    }//GEN-LAST:event_jButton10ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -256,7 +377,7 @@ public class KassaForm extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(KassaForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -277,7 +398,9 @@ public class KassaForm extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
