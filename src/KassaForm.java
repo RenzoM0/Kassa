@@ -293,6 +293,7 @@ public class KassaForm extends javax.swing.JFrame {
         jLabel1.setText(Arrays.deepToString(productNaam));
         // kassabon weghalen
         jLabel1.setVisible(false);
+        jCheckBox1.setSelected(false);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
@@ -318,10 +319,10 @@ public class KassaForm extends javax.swing.JFrame {
         afrondingKorting = Math.round(kortingBedrag*100.0)/100.0;
         
         if (korting) {
-            jLabel1.setText(Arrays.deepToString(productNaam) + "\n10% korting € " + afrondingKorting
-                    + "Inclusief 21% BTW: " + afrondingBTW + "\nTotaal: € " + afrondingVB);
+            jLabel1.setText("<html>" + Arrays.deepToString(productNaam) +"<br/>" + "10% korting: € " + afrondingKorting
+                    +"<br/>"+ "Inclusief 21% BTW: €" + afrondingBTW + "Totaal: € " + afrondingVB + "<html>");
         } else {
-            jLabel1.setText(Arrays.deepToString(productNaam) +  "Inclusief 21% BTW: " + afrondingBTW + "\nTotaal: € " + afrondingVB);
+            jLabel1.setText("<html>" + Arrays.deepToString(productNaam) + "<br/>" + "Inclusief 21% BTW: €" + afrondingBTW + "<br/>" +"Totaal: € " + afrondingVB + "<html>");
         }
         jLabel1.setVisible(true);
     }//GEN-LAST:event_jButton10ActionPerformed
