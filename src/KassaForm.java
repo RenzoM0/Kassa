@@ -123,6 +123,8 @@ public class KassaForm extends javax.swing.JFrame {
         jList1.setToolTipText("");
         jScrollPane1.setViewportView(jList1);
 
+        jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -203,10 +205,10 @@ public class KassaForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     String[] producten = {"Bier", "Speciaal Bier", "Koffie", "Water", "Wijn Wit", "Wijn Rood"};
     double[] prijsLijst = {2.50, 3.50, 2.0, 1.50, 4.50, 4.50};
-    double voorlopigBedrag = 0;
+    double voorlopigBedrag = 0, kortingBedrag = 0, afrondingVB, afrondingBTW,afrondingKorting;
     boolean korting = false;
     int[] aantal = {0, 0, 0, 0, 0, 0};
-    String[][] productNaam = {{"","",""}, {"", "",""}, {"","",""}, {"","",""}, {"", "",""}, {"","",""}};
+    String[][] productNaam = {{"", "", ""}, {"", "", ""}, {"", "", ""}, {"", "", ""}, {"", "", ""}, {"", "", ""}};
 
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -221,26 +223,7 @@ public class KassaForm extends javax.swing.JFrame {
 
         voorlopigBedrag += productPrijs;
         jTextField2.setText("€ " + voorlopigBedrag);
-        /*
-        productNaam[0][0] = "";
-        productNaam[0][1] = "";
-        productNaam[0][2] = "";
-        productNaam[1][0] = "";
-        productNaam[1][1] = "";
-        productNaam[1][2] = "";
-        productNaam[2][0] = "";
-        productNaam[2][1] = "";
-        productNaam[2][2] = "";
-        productNaam[3][0] = "";
-        productNaam[3][1] = "";
-        productNaam[3][2] = "";
-        productNaam[4][0] = "";
-        productNaam[4][1] = "";
-        productNaam[4][2] = "";
-        productNaam[5][0] = "";
-        productNaam[5][1] = "";
-        productNaam[5][2] = "";
-        */
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -310,35 +293,30 @@ public class KassaForm extends javax.swing.JFrame {
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // BUTTON RESET
+        // Reset het voorlopig bedrag naar 0
         voorlopigBedrag = 0;
+        // Reset alle waardes naar 0
         jTextField2.setText("€ " + voorlopigBedrag);
-        productNaam[0][0] = "";
-        productNaam[0][1] = "";
-        productNaam[0][2] = "";
-        productNaam[1][0] = "";
-        productNaam[1][1] = "";
-        productNaam[1][2] = "";
-        productNaam[2][0] = "";
-        productNaam[2][1] = "";
-        productNaam[2][2] = "";
-        productNaam[3][0] = "";
-        productNaam[3][1] = "";
-        productNaam[3][2] = "";
-        productNaam[4][0] = "";
-        productNaam[4][1] = "";
-        productNaam[4][2] = "";
-        productNaam[5][0] = "";
-        productNaam[5][1] = "";
-        productNaam[5][2] = "";
+        for (int i = 0; i < aantal.length; i++) {
+            aantal[i] = 0;
+            productNaam[i][0] = "";
+            productNaam[i][1] = "";
+            productNaam[i][2] = "";
+        }
+        // verander text
         jLabel1.setText(Arrays.deepToString(productNaam));
+        // kassabon weghalen
+        jLabel1.setVisible(false);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
+        // Korting tickbox
         if (!korting) {
-            voorlopigBedrag *= 1.10;
+            kortingBedrag = voorlopigBedrag * 0.10;
+            voorlopigBedrag -= kortingBedrag;
             jTextField2.setText("€ " + voorlopigBedrag);
             korting = true;
+
         } else {
             voorlopigBedrag = voorlopigBedrag / 110 * 100;
             jTextField2.setText("€ " + voorlopigBedrag);
@@ -347,8 +325,18 @@ public class KassaForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
-        jLabel1.setText(Arrays.deepToString(productNaam));
+        // Afreken knop:
+        double btw = voorlopigBedrag * 0.21;
+        afrondingBTW = Math.round((btw*100)/100);
+        afrondingVB = Math.round((btw*100)/100);
+        afrondingKorting = Math.round((btw*100)/100);
+        if (korting = true) {
+            jLabel1.setText(Arrays.deepToString(productNaam) + "\n10% korting € " + afrondingKorting
+                    + "Inclusief 21% BTW: " + afrondingBTW + "\nTotaal: € " + afrondingVB);
+        } else {
+            jLabel1.setText(Arrays.deepToString(productNaam) +  "Inclusief 21% BTW: " + afrondingBTW + "\nTotaal: € " + afrondingVB);
+        }
+        jLabel1.setVisible(true);
     }//GEN-LAST:event_jButton10ActionPerformed
 
     /**

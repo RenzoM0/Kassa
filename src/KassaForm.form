@@ -247,6 +247,9 @@
       </SubComponents>
     </Container>
     <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="verticalAlignment" type="int" value="1"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
