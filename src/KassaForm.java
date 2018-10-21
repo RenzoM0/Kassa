@@ -1,7 +1,8 @@
 
 import java.util.Arrays;
 
-/*
+/*Lorenzino Macnack 18088066 en Geritia Gortemaker 18135366, klas 3A Beroepsproduct periode 1: Kassa
+ *
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -39,9 +40,12 @@ public class KassaForm extends javax.swing.JFrame {
         jButton10 = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
+        jButton1.setBackground(new java.awt.Color(237, 209, 126));
         jButton1.setText("Koffie");
         jButton1.setMaximumSize(new java.awt.Dimension(55, 25));
         jButton1.setMinimumSize(new java.awt.Dimension(55, 25));
@@ -51,7 +55,10 @@ public class KassaForm extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(15, 85, 99, 52);
 
+        jButton2.setBackground(new java.awt.Color(237, 209, 126));
         jButton2.setText("Water");
         jButton2.setMaximumSize(new java.awt.Dimension(55, 25));
         jButton2.setMinimumSize(new java.awt.Dimension(55, 25));
@@ -61,22 +68,30 @@ public class KassaForm extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(129, 85, 107, 52);
 
+        jCheckBox1.setBackground(new java.awt.Color(237, 209, 126));
         jCheckBox1.setText("10% Korting");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jCheckBox1);
+        jCheckBox1.setBounds(67, 219, 105, 29);
 
-        jButton3.setBackground(new java.awt.Color(192, 227, 141));
+        jButton3.setBackground(new java.awt.Color(237, 209, 126));
         jButton3.setText("Bier");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton3);
+        jButton3.setBounds(15, 16, 104, 53);
 
+        jButton4.setBackground(new java.awt.Color(237, 209, 126));
         jButton4.setText("Speciaal bier");
         jButton4.setMaximumSize(new java.awt.Dimension(55, 25));
         jButton4.setMinimumSize(new java.awt.Dimension(55, 25));
@@ -86,7 +101,10 @@ public class KassaForm extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton4);
+        jButton4.setBounds(128, 16, 117, 53);
 
+        jButton5.setBackground(new java.awt.Color(237, 209, 126));
         jButton5.setText("Wijn Wit");
         jButton5.setPreferredSize(new java.awt.Dimension(91, 25));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -94,7 +112,10 @@ public class KassaForm extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton5);
+        jButton5.setBounds(15, 153, 93, 48);
 
+        jButton6.setBackground(new java.awt.Color(237, 209, 126));
         jButton6.setText("Wijn Rood");
         jButton6.setMaximumSize(new java.awt.Dimension(55, 25));
         jButton6.setMinimumSize(new java.awt.Dimension(55, 25));
@@ -103,14 +124,20 @@ public class KassaForm extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton6);
+        jButton6.setBounds(128, 153, 105, 48);
 
+        jButton9.setBackground(new java.awt.Color(237, 209, 126));
         jButton9.setText("Reset");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton9);
+        jButton9.setBounds(15, 270, 96, 58);
 
+        jButton10.setBackground(new java.awt.Color(237, 209, 126));
         jButton10.setText("Afrekenen");
         jButton10.setPreferredSize(new java.awt.Dimension(65, 25));
         jButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -118,74 +145,24 @@ public class KassaForm extends javax.swing.JFrame {
                 jButton10ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton10);
+        jButton10.setBounds(129, 270, 104, 58);
 
+        jTextField2.setBackground(new java.awt.Color(237, 209, 126));
+        getContentPane().add(jTextField2);
+        jTextField2.setBounds(15, 346, 277, 39);
+
+        jLabel1.setForeground(new java.awt.Color(255, 0, 51));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabel1.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(307, 0, 277, 336);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(20, 20, 20)
-                                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jCheckBox1)
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
-                    .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Gebruiker\\Documents\\GitHub\\Kassa\\duckwine2.jpg")); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(0, 0, 600, 400);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -322,7 +299,7 @@ public class KassaForm extends javax.swing.JFrame {
             jLabel1.setText("<html>" + Arrays.deepToString(productNaam) +"<br/>" + "10% korting: € " + afrondingKorting
                     +"<br/>"+ "Inclusief 21% BTW: €" + afrondingBTW + "Totaal: € " + afrondingVB + "<html>");
         } else {
-            jLabel1.setText("<html>" + Arrays.deepToString(productNaam) + "<br/>" + "Inclusief 21% BTW: €" + afrondingBTW + "<br/>" +"Totaal: € " + afrondingVB + "<html>");
+            jLabel1.setText("<html>" + Arrays.deepToString(productNaam) + "<br/>" + "Inclusief 21% BTW: €" + afrondingBTW + "<br/>" + "Totaal: € " + afrondingVB + "<html>");
         }
         jLabel1.setVisible(true);
     }//GEN-LAST:event_jButton10ActionPerformed
@@ -373,6 +350,7 @@ public class KassaForm extends javax.swing.JFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     public javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
