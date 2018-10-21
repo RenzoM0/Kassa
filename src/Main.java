@@ -4,7 +4,7 @@
 
 /**
  *
- * @author Geritia & Renzo
+ * @author Geritia(18135366) & Renzo (18088066)
  */
 public class Main {
 

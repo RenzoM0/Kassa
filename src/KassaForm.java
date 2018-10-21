@@ -178,12 +178,12 @@ public class KassaForm extends javax.swing.JFrame {
         // BUTTON BIER
         productNaam[0][1] = producten[0];
         double productPrijs = prijsLijst[0];
-        String productText = Double.toString(productPrijs);
-        productNaam[0][2] = productText;
         aantal[0] += 1;
+        double groepsPrijs = aantal[0] * prijsLijst[0];
+        String productText = Double.toString(groepsPrijs);
         String aantalText = Integer.toString(aantal[0]);
         productNaam[0][0] = aantalText;
-
+        productNaam[0][2] = productText;
         voorlopigBedrag += productPrijs;
         jTextField2.setText("€ " + voorlopigBedrag);
 
@@ -193,11 +193,12 @@ public class KassaForm extends javax.swing.JFrame {
         // BUTTON SPECIAAL BIER
         productNaam[1][1] = producten[1];
         double productPrijs = prijsLijst[1];
-        String productText = Double.toString(productPrijs);
-        productNaam[1][2] = productText;
         aantal[1] += 1;
+        double groepsPrijs = aantal[1] * prijsLijst[1];
+        String productText = Double.toString(groepsPrijs);
         String aantalText = Integer.toString(aantal[1]);
         productNaam[1][0] = aantalText;
+        productNaam[1][2] = productText;
         voorlopigBedrag += productPrijs;
         jTextField2.setText("€ " + voorlopigBedrag);
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -205,12 +206,13 @@ public class KassaForm extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // BUTTON KOFFIE
         productNaam[2][1] = producten[2];
-        double productPrijs = prijsLijst[2];
-        String productText = Double.toString(productPrijs);
-        productNaam[2][2] = productText;
+        double productPrijs = prijsLijst[2];     
         aantal[2] += 1;
+        double groepsPrijs = aantal[2] * prijsLijst[2];
+        String productText = Double.toString(groepsPrijs);
         String aantalText = Integer.toString(aantal[2]);
         productNaam[2][0] = aantalText;
+        productNaam[2][2] = productText;
         voorlopigBedrag += productPrijs;
         jTextField2.setText("€ " + voorlopigBedrag);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -219,11 +221,12 @@ public class KassaForm extends javax.swing.JFrame {
         // BUTTON WATER
         productNaam[3][1] = producten[3];
         double productPrijs = prijsLijst[3];
-        String productText = Double.toString(productPrijs);
-        productNaam[3][2] = productText;
         aantal[3] += 1;
+        double groepsPrijs = aantal[3] * prijsLijst[3];
+        String productText = Double.toString(groepsPrijs);
         String aantalText = Integer.toString(aantal[3]);
         productNaam[3][0] = aantalText;
+        productNaam[3][2] = productText;
         voorlopigBedrag += productPrijs;
         jTextField2.setText("€ " + voorlopigBedrag);
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -232,8 +235,9 @@ public class KassaForm extends javax.swing.JFrame {
         // BUTTON WITTE WIJN
         productNaam[4][1] = producten[4];
         double productPrijs = prijsLijst[4];
-        String productText = Double.toString(productPrijs);
         aantal[4] += 1;
+        double groepsPrijs = aantal[4] * prijsLijst[4];
+        String productText = Double.toString(groepsPrijs);
         String aantalText = Integer.toString(aantal[4]);
         productNaam[4][0] = aantalText;
         productNaam[4][2] = productText;
@@ -244,9 +248,10 @@ public class KassaForm extends javax.swing.JFrame {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // BUTTON RODE WIJN
         productNaam[5][1] = producten[5];
-        double productPrijs = prijsLijst[5];
-        String productText = Double.toString(productPrijs);
+        double productPrijs = prijsLijst[5]; 
         aantal[5] += 1;
+        double groepsPrijs = aantal[5] * prijsLijst[5];
+        String productText = Double.toString(groepsPrijs);
         String aantalText = Integer.toString(aantal[5]);
         productNaam[5][0] = aantalText;
         productNaam[5][2] = productText;
